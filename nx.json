@@ -1,7 +1,5 @@
 {
-  "affected": {
-    "defaultBase": "origin/main"
-  },
+  "affected": { "defaultBase": "origin/main" },
   "stuff": [],
   "namedInputs": {
     "default": ["sharedGlobals", "{projectRoot}/**/*"],
@@ -24,16 +22,11 @@
         "outputPath": "dist/apps/{projectName}",
         "buildLibsFromSource": false
       },
-      "configurations": {
-        "production": {}
-      }
+      "configurations": { "production": {} }
     },
     "serve": {
       "executor": "@nx/next:server",
-      "options": {
-        "buildTarget": "{projectName}:build",
-        "dev": true
-      },
+      "options": { "buildTarget": "{projectName}:build", "dev": true },
       "configurations": {
         "production": {
           "buildTarget": "{projectName}:build:production",
@@ -46,9 +39,7 @@
       "cache": true,
       "inputs": ["production", "^production"],
       "outputs": ["{workspaceRoot}/dist/{projectRoot}/exported"],
-      "options": {
-        "buildTarget": "{projectName}:build:production"
-      }
+      "options": { "buildTarget": "{projectName}:build:production" }
     },
     "serve-static": {
       "dependsOn": ["export"],
@@ -66,9 +57,7 @@
       "cache": true,
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
       "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx,js,jsx}"]
-      }
+      "options": { "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx,js,jsx}"] }
     },
     "test": {
       "cache": true,
@@ -80,5 +69,7 @@
       }
     }
   },
-  "plugins": ["@nx/cypress/plugin"]
+  "plugins": ["@nx/cypress/plugin"],
+  "nxCloudAccessToken": "NjJlZTQ5ODMtZmI2NS00YWVmLWJhYmMtNGI2NWFlNzViNjU0fHJlYWQtd3JpdGU=",
+  "nxCloudUrl": "http://localhost:4202"
 }
